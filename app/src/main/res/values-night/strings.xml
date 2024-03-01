@@ -1,0 +1,18 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name" translatable="false">RandomUser</string>
+    <string name="contacts">Контакты:</string>
+    <string name="phone_number">Телефон: <xliff:g id="phone">%1$s</xliff:g></string>
+    <string name="cell_phone_number">Моб. телефон: <xliff:g id="phone">%1$s</xliff:g></string>
+    <string name="email" translatable="false">Email: <xliff:g id="email">%1$s</xliff:g></string>
+    <string name="message">Сообщение</string>
+    <string name="personal_data">Персональные данные:</string>
+    <string name="username" translatable="false">Username: <xliff:g id="username">%1$s</xliff:g></string>
+    <string name="birthdate">День рождения: <xliff:g id="birthdate">%1$s</xliff:g></string>
+    <string name="city">Город: <xliff:g id="city">%1$s</xliff:g></string>
+    <string name="registration_date">Дата регистрации: <xliff:g id="regDate">%1$s</xliff:g></string>
+    <string name="postcode">Потовый индекс: <xliff:g id="regDate">%1$s</xliff:g></string>
+    <string name="timezone">Часовой пояс: <xliff:g id="timezone">%1$s</xliff:g></string>
+    <string name="city_placeholder" translatable="false"><xliff:g id="city">%1$s</xliff:g>, <xliff:g id="country">%1$s</xliff:g></string>
+    <string name="avatar_error_msg">Не удалось загрузить изображение.</string>
+    <string name="retry">Повторить</string>
+</resources>

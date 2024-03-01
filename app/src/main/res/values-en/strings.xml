@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">RandomUser</string>
+    <string name="contacts">Contacts:</string>
+    <string name="phone_number">Phone: <xliff:g id="phone">%1$s</xliff:g></string>
+    <string name="cell_phone_number">Mob. Phone: <xliff:g id="phone">%1$s</xliff:g></string>
+    <string name="message">Message</string>
+    <string name="personal_data">Personal information:</string>
+    <string name="birthdate">Birthdate: <xliff:g id="birthdate">%1$s</xliff:g></string>
+    <string name="city">City: <xliff:g id="city">%1$s</xliff:g></string>
+    <string name="registration_date">Registered Date: <xliff:g id="regDate">%1$s</xliff:g></string>
+    <string name="postcode">Postcode: <xliff:g id="regDate">%1$s</xliff:g></string>
+    <string name="timezone">Timezone: <xliff:g id="timezone">%1$s</xliff:g></string>
+    <string name="avatar_error_msg">Image load error.</string>
+    <string name="retry">Retry</string>
+</resources>

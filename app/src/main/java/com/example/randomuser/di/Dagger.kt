@@ -33,7 +33,7 @@ private const val PAGER_PAGE_SIZE = 15
 private const val PAGER_PREFETCH_DISTANCE = 5
 private const val PAGER_INITIAL_KEY = 1
 private const val BASE_URL = "https://randomuser.me/"
-private const val DATABASE_NAME = "RandomUsersDb"
+private const val DATABASE_NAME = "RandomUsers.db"
 
 @Component(modules = [AppModule::class])
 interface AppComponent {

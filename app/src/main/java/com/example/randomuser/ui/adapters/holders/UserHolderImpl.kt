@@ -6,9 +6,7 @@ import android.view.View.OnClickListener
 import com.example.randomuser.R
 import com.example.randomuser.data.database.models.UserEntity
 import com.example.randomuser.databinding.UserItemBinding
-import com.example.randomuser.ui.activities.MainActivity
 import com.example.randomuser.ui.fragments.MainFragment
-import com.example.randomuser.ui.fragments.UserInfoFragment
 import com.example.randomuser.utils.Utils
 import com.squareup.picasso.Picasso
 
@@ -48,11 +46,7 @@ class UserHolderImpl(
     }
 
     override fun onClick(v: View?) {
-        (binding.root.context as MainActivity).supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.fragment_container, UserInfoFragment.newInstance(userEntity.primaryId))
-            .addToBackStack(null)
-            .commit()
+        callback.userSelected(userId = userEntity.primaryId)
     }
 
 }

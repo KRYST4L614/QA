@@ -99,7 +99,7 @@ class UserInfoFragment : Fragment() {
                         .format(DateFormat.format("d MMMM yyyy", userEntity.birthdate))
                 personalInfo.username.text =
                     requireContext().getString(R.string.username).format(userEntity.username)
-                personalInfo.registeredDate.text = requireContext().getString(R.string.birthdate)
+                personalInfo.registeredDate.text = requireContext().getString(R.string.registration_date)
                     .format(DateFormat.format("d MMMM yyyy", userEntity.registerDate))
                 contacts.email.text =
                     requireContext().getString(R.string.email).format(userEntity.email)

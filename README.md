@@ -18,6 +18,8 @@
     Также она поддерживает кеширование "из коробки", и простое взаимодействие с базой данных для кеширования.
   5) Picasso для загрузки изображений из сети. Была выбрана эта библиотека по причине её популярности и наличия опыта работы с ней. Также поддерживает кеширование "из коробки".
   6) Moshi для дессериализации JSON ответов с сервера. Была выбрана эта библиотека по причине её популярности и более широкого функционала, чем устаревшая GSON.
-![user_list](https://github.com/KRYST4L614/RandomUserCFT/assets/108845539/50ddaae6-ae00-46d9-af80-16180d2a0ce0)
-![user_info](https://github.com/KRYST4L614/RandomUserCFT/assets/108845539/d5b600dd-306c-49c1-93dc-ccbdc3e0c5f8)
-![error](https://github.com/KRYST4L614/RandomUserCFT/assets/108845539/d88a3c71-58f8-4865-a1d9-83778e8d4f1b)
+Скриншоты
+
+> <img src="https://github.com/KRYST4L614/RandomUserCFT/assets/108845539/50ddaae6-ae00-46d9-af80-16180d2a0ce0" width="200"/>
+> <img src="https://github.com/KRYST4L614/RandomUserCFT/assets/108845539/d5b600dd-306c-49c1-93dc-ccbdc3e0c5f8" width="200"/>
+> <img src="https://github.com/KRYST4L614/RandomUserCFT/assets/108845539/d88a3c71-58f8-4865-a1d9-83778e8d4f1b" width="200"/>

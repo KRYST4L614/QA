@@ -25,7 +25,8 @@ class UserHolderImpl(
             ).joinToString(" ")
         }
         userEntity.city?.let { city ->
-            binding.info.text = binding.root.context.getString(R.string.city_placeholder).format(city, userEntity.country)
+            binding.info.text = binding.root.context.getString(R.string.city_placeholder)
+                .format(city, userEntity.country)
         }
         userEntity.pictureLarge.let {
             Picasso.get().load(Uri.parse(it)).into(binding.avatar)

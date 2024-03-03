@@ -5,6 +5,6 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class UsersListData(
-    @Json(name= "results")
+    @Json(name = "results")
     var userItems: List<UserData>
 )

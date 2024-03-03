@@ -5,18 +5,18 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class Location(
-    @Json(name= "street")
+    @Json(name = "street")
     val street: Street?,
-    @Json(name= "city")
+    @Json(name = "city")
     val city: String?,
-    @Json(name= "state")
+    @Json(name = "state")
     val state: String?,
-    @Json(name= "country")
+    @Json(name = "country")
     val country: String?,
-    @Json(name= "postcode")
+    @Json(name = "postcode")
     val postcode: String?,
-    @Json(name= "coordinates")
+    @Json(name = "coordinates")
     val coordinates: Coordinates?,
-    @Json(name= "timezone")
+    @Json(name = "timezone")
     val timezone: Timezone?,
 )

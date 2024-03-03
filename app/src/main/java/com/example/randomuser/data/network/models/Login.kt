@@ -5,18 +5,18 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class Login(
-    @Json(name= "uuid")
+    @Json(name = "uuid")
     val uuid: String?,
-    @Json(name= "username")
+    @Json(name = "username")
     val username: String?,
-    @Json(name= "password")
+    @Json(name = "password")
     val password: String?,
-    @Json(name= "salt")
+    @Json(name = "salt")
     val salt: String?,
-    @Json(name= "md5")
+    @Json(name = "md5")
     val md5: String?,
-    @Json(name= "sha1")
+    @Json(name = "sha1")
     val sha1: String?,
-    @Json(name= "sha256")
+    @Json(name = "sha256")
     val sha256: String?,
 )

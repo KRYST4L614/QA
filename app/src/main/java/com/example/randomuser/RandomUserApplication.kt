@@ -3,11 +3,11 @@ package com.example.randomuser
 import android.app.Application
 import android.content.Context
 import com.example.randomuser.data.database.RandomUsersDatabase
+import com.example.randomuser.data.network.api.RandomUserApi
+import com.example.randomuser.data.repositories.db.RepositoryRandomUserDbImpl
+import com.example.randomuser.data.repositories.network.RepositoryRandomUserApiImpl
 import com.example.randomuser.di.AppComponent
 import com.example.randomuser.di.DaggerAppComponent
-import com.example.randomuser.data.network.api.RandomUserApi
-import com.example.randomuser.data.repositories.network.RepositoryRandomUserApiImpl
-import com.example.randomuser.data.repositories.db.RepositoryRandomUserDbImpl
 import javax.inject.Inject
 
 class RandomUserApplication : Application() {
@@ -15,6 +15,7 @@ class RandomUserApplication : Application() {
 
     @Inject
     lateinit var randomUserApi: RandomUserApi
+
     @Inject
     lateinit var randomUsersDatabase: RandomUsersDatabase
 

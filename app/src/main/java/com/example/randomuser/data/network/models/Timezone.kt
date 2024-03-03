@@ -5,8 +5,8 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class Timezone(
-    @Json(name= "offset")
+    @Json(name = "offset")
     val offset: String?,
-    @Json(name= "description")
+    @Json(name = "description")
     val description: String?,
 )

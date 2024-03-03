@@ -25,7 +25,8 @@ class RepositoryRandomUserApiImpl(
         }
 
         fun get(): RepositoryRandomUserApiImpl {
-            return INSTANCE ?: throw IllegalStateException("${this::class::java.name} must be initialized")
+            return INSTANCE
+                ?: throw IllegalStateException("${this::class::java.name} must be initialized")
         }
     }
 }

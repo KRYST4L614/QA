@@ -5,10 +5,10 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class Name(
-    @Json(name= "title")
+    @Json(name = "title")
     val title: String?,
-    @Json(name= "first")
+    @Json(name = "first")
     val first: String?,
-    @Json(name= "last")
+    @Json(name = "last")
     val last: String?,
 )

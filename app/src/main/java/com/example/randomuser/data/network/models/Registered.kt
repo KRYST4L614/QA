@@ -5,8 +5,8 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class Registered(
-    @Json(name= "date")
+    @Json(name = "date")
     val date: String?,
-    @Json(name= "age")
+    @Json(name = "age")
     val age: Int?,
 )

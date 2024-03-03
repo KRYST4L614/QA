@@ -5,8 +5,8 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class Id(
-    @Json(name= "name")
+    @Json(name = "name")
     val name: String?,
-    @Json(name= "value")
+    @Json(name = "value")
     val value: String?,
 )

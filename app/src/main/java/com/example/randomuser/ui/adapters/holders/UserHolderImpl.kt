@@ -29,7 +29,7 @@ class UserHolderImpl(
                 .format(city, userEntity.country)
         }
         userEntity.pictureLarge.let {
-            Picasso.get().load(Uri.parse(it)).into(binding.avatar)
+            Picasso.get().load(Uri.parse(it)).placeholder(R.drawable.account_circle).into(binding.avatar)
         }
         userEntity.phone?.let { phone ->
             binding.callButton.setOnClickListener {

@@ -4,15 +4,12 @@ import android.content.Context
 import androidx.paging.ExperimentalPagingApi
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
-import androidx.paging.PagingSource
 import androidx.room.Room
 import com.example.randomuser.RandomUserApplication
 import com.example.randomuser.data.database.RandomUsersDatabase
 import com.example.randomuser.data.database.models.UserEntity
 import com.example.randomuser.data.network.api.RandomUserApi
-import com.example.randomuser.data.network.models.UserData
 import com.example.randomuser.data.network.paging.RandomUserRemoteMediator
-import com.example.randomuser.data.network.paging.UsersPagingSource
 import com.example.randomuser.data.repositories.db.RepositoryRandomUserDb
 import com.example.randomuser.data.repositories.db.RepositoryRandomUserDbImpl
 import com.example.randomuser.data.repositories.network.RepositoryRandomUserApi
@@ -71,11 +68,6 @@ class NetworkModule {
                 db.dao.pagingSource()
             }
         )
-    }
-
-    @Provides
-    fun providePagingSource(repository: RepositoryRandomUserApi): PagingSource<Int, UserData> {
-        return UsersPagingSource(repository)
     }
 
     @Provides

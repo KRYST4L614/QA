@@ -5,7 +5,6 @@ import android.text.format.DateFormat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.randomuser.R
@@ -14,7 +13,6 @@ import com.example.randomuser.di.AppComponent
 import com.example.randomuser.di.DaggerAppComponent
 import com.example.randomuser.ui.viewmodels.MainViewModel
 import com.example.randomuser.utils.Utils
-import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
 import javax.inject.Inject
 
@@ -43,28 +41,12 @@ class UserInfoFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.avatarInfo.avatarError.avatarProgressBar.isVisible = true
-        binding.avatarInfo.avatar.isVisible = false
-        binding.avatarInfo.avatarError.errorMessage.isVisible = false
-        binding.avatarInfo.avatarError.retryButton.isVisible = false
         viewModel.getUserById(arguments?.getInt(USER_ID_KEY)!!).observe(
             viewLifecycleOwner
         ) { userEntity ->
             with(binding) {
-                Picasso.get().load(userEntity.pictureLarge).into(avatarInfo.avatar, object :
-                    Callback {
-                    override fun onSuccess() {
-                        binding.avatarInfo.avatarError.avatarProgressBar.isVisible = false
-                        binding.avatarInfo.avatar.isVisible = true
-                    }
-
-                    override fun onError(e: Exception?) {
-                        binding.avatarInfo.avatarError.avatarProgressBar.isVisible = false
-                        binding.avatarInfo.avatarError.errorMessage.isVisible = true
-                        binding.avatarInfo.avatarError.retryButton.isVisible = true
-                    }
-
-                })
+                Picasso.get().load(userEntity.pictureLarge)
+                    .placeholder(R.drawable.account_placeholder).into(avatarInfo.avatar)
                 avatarInfo.name.text =
                     listOf(
                         userEntity.titleName,
@@ -99,8 +81,9 @@ class UserInfoFragment : Fragment() {
                         .format(DateFormat.format("d MMMM yyyy", userEntity.birthdate))
                 personalInfo.username.text =
                     requireContext().getString(R.string.username).format(userEntity.username)
-                personalInfo.registeredDate.text = requireContext().getString(R.string.registration_date)
-                    .format(DateFormat.format("d MMMM yyyy", userEntity.registerDate))
+                personalInfo.registeredDate.text =
+                    requireContext().getString(R.string.registration_date)
+                        .format(DateFormat.format("d MMMM yyyy", userEntity.registerDate))
                 contacts.email.text =
                     requireContext().getString(R.string.email).format(userEntity.email)
                 contacts.phoneNumber.text =

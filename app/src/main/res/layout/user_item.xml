@@ -26,11 +26,11 @@
                 android:id="@+id/avatar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:scaleType="centerCrop"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:srcCompat="@tools:sample/avatars"
-                android:scaleType="centerCrop"/>
+                tools:srcCompat="@tools:sample/avatars" />
 
         </com.google.android.material.card.MaterialCardView>
 
@@ -69,12 +69,12 @@
             android:layout_height="48dp"
             android:layout_margin="8dp"
             android:background="@android:color/transparent"
+            android:importantForAccessibility="no"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/message_button"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/phone"
-            app:tint="?android:attr/colorForeground"
-            android:importantForAccessibility="no" />
+            app:tint="?android:attr/colorForeground" />
 
         <ImageButton
             android:id="@+id/message_button"
@@ -82,12 +82,12 @@
             android:layout_height="48dp"
             android:layout_margin="8dp"
             android:background="@android:color/transparent"
+            android:importantForAccessibility="no"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/chat"
-            app:tint="?android:attr/colorForeground"
-            android:importantForAccessibility="no" />
+            app:tint="?android:attr/colorForeground" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

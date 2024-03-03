@@ -13,4 +13,5 @@
     <string name="timezone">Timezone: <xliff:g id="timezone">%1$s</xliff:g></string>
     <string name="avatar_error_msg">Image load error.</string>
     <string name="retry">Retry</string>
+    <string name="network_error">"Connection error."</string>
 </resources>

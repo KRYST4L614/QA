@@ -11,7 +11,5 @@
     <string name="registration_date">Registered Date: <xliff:g id="regDate">%1$s</xliff:g></string>
     <string name="postcode">Postcode: <xliff:g id="regDate">%1$s</xliff:g></string>
     <string name="timezone">Timezone: <xliff:g id="timezone">%1$s</xliff:g></string>
-    <string name="avatar_error_msg">Image load error.</string>
-    <string name="retry">Retry</string>
     <string name="network_error">"Connection error."</string>
 </resources>

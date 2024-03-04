@@ -47,7 +47,7 @@
             app:layout_constraintEnd_toStartOf="@+id/call_button"
             app:layout_constraintStart_toEndOf="@+id/card"
             app:layout_constraintTop_toTopOf="@+id/card"
-            tools:text="aaaaaaaaaaaaag" />
+            tools:text="Name Lastname"/>
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/info"
@@ -61,7 +61,7 @@
             app:layout_constraintEnd_toEndOf="@+id/name"
             app:layout_constraintStart_toStartOf="@+id/name"
             app:layout_constraintTop_toBottomOf="@+id/name"
-            tools:text="asffsdfgdffhdhfg" />
+            tools:text="Country, city"/>
 
         <ImageButton
             android:id="@+id/call_button"

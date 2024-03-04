@@ -29,7 +29,8 @@ class UserHolderImpl(
                 .format(city, userEntity.country)
         }
         userEntity.pictureLarge.let {
-            Picasso.get().load(Uri.parse(it)).placeholder(R.drawable.account_circle).into(binding.avatar)
+            Picasso.get().load(Uri.parse(it)).placeholder(R.drawable.account_circle)
+                .into(binding.avatar)
         }
         userEntity.phone?.let { phone ->
             binding.callButton.setOnClickListener {
@@ -47,7 +48,7 @@ class UserHolderImpl(
     }
 
     override fun onClick(v: View?) {
-        callback.userSelected(userId = userEntity.primaryId)
+        callback.userSelected(userEntity = userEntity)
     }
 
 }

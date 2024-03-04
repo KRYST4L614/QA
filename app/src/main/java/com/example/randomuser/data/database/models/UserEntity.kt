@@ -1,9 +1,12 @@
 package com.example.randomuser.data.database.models
 
+import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import kotlinx.parcelize.Parcelize
 import java.util.Date
 
+@Parcelize
 @Entity(tableName = "randomUsers")
 data class UserEntity(
     @PrimaryKey(autoGenerate = true)
@@ -42,4 +45,4 @@ data class UserEntity(
     val pictureMedium: String?,
     val pictureLarge: String?,
     val nat: String?,
-)
+) : Parcelable

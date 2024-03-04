@@ -13,6 +13,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.paging.LoadState
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.randomuser.R
+import com.example.randomuser.data.database.models.UserEntity
 import com.example.randomuser.databinding.FragmentMainBinding
 import com.example.randomuser.di.AppComponent
 import com.example.randomuser.di.DaggerAppComponent
@@ -108,6 +109,6 @@ class MainFragment : Fragment() {
     }
 
     interface Callback {
-        fun userSelected(userId: Int)
+        fun userSelected(userEntity: UserEntity)
     }
 }

@@ -13,7 +13,5 @@
     <string name="postcode">Postcode: <xliff:g id="regDate">%1$s</xliff:g></string>
     <string name="timezone">Часовой пояс: <xliff:g id="timezone">%1$s</xliff:g></string>
     <string name="city_placeholder" translatable="false"><xliff:g id="city">%1$s</xliff:g>, <xliff:g id="country">%2$s</xliff:g></string>
-    <string name="avatar_error_msg">Не удалось загрузить изображение.</string>
-    <string name="retry">Повторить</string>
     <string name="network_error">"Ошибка соединения."</string>
 </resources>

@@ -44,6 +44,7 @@ public class OKLoginTest {
                 .enterLogin(OKLoginPage.login)
                 .enterPassword(OKLoginPage.password)
                 .clickLoginButton()
+                .navSideBarShouldBeVisible()
                 .logout();
     }
 }

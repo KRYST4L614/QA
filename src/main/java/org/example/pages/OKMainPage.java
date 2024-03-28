@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class OKMainPage implements BasePage {
 
-    private final SelenideElement navSideFeedBtn = $("class.nav-side_i  __ac __with-ic __with-new-icons");
+    private final SelenideElement navSideBar = $("div.nav-side.__navigation.__user-main");
     private final SelenideElement toolbarMenuBtn =
             $("button.ucard-mini.toolbar_ucard.js-toolbar-menu.__a11y");
     private final SelenideElement logoutBtn = $("div.toolbar_accounts-user-delete-button");
@@ -21,8 +21,8 @@ public class OKMainPage implements BasePage {
         return this;
     }
 
-    public OKMainPage navSideFeedBtnShouldBeVisible() {
-        navSideFeedBtn.shouldBe(visible);
+    public OKMainPage navSideBarShouldBeVisible() {
+        navSideBar.shouldBe(visible);
         return this;
     }
 

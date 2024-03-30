@@ -1,4 +1,4 @@
-package org.example.tests;
+package org.example.tests.extensions;
 
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.extension.AfterEachCallback;

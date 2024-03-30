@@ -1,13 +1,13 @@
 package org.example.tests;
 
 import com.codeborne.selenide.Configuration;
-import org.junit.jupiter.api.extension.AfterAllCallback;
+import org.junit.jupiter.api.extension.AfterEachCallback;
 import org.junit.jupiter.api.extension.BeforeAllCallback;
 import org.junit.jupiter.api.extension.ExtensionContext;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 
-public class BaseTest implements AfterAllCallback, BeforeAllCallback {
+public class BaseTestCallback implements BeforeAllCallback, AfterEachCallback {
     public static final String baseUrl = "https://ok.ru";
     public static final String browser = "chrome";
 
@@ -18,7 +18,7 @@ public class BaseTest implements AfterAllCallback, BeforeAllCallback {
     }
 
     @Override
-    public void afterAll(ExtensionContext extensionContext) {
+    public void afterEach(ExtensionContext extensionContext) {
         closeWebDriver();
     }
 }

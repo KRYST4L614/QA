@@ -1,5 +1,6 @@
 plugins {
     id("java")
+    kotlin("jvm")
 }
 
 group = "org.example"
@@ -17,8 +18,12 @@ dependencies {
     implementation("org.junit.jupiter:junit-jupiter")
     implementation("com.codeborne:selenide:$selenideVersion")
     runtimeOnly("org.slf4j:slf4j-simple:$slf4jVersion")
+    implementation(kotlin("stdlib-jdk8"))
 }
 
 tasks.test {
     useJUnitPlatform()
+}
+kotlin {
+    jvmToolchain(19)
 }

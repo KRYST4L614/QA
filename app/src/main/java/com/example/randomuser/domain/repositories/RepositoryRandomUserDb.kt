@@ -1,4 +1,4 @@
-package com.example.randomuser.data.repositories.db
+package com.example.randomuser.domain.repositories
 
 import androidx.lifecycle.LiveData
 import com.example.randomuser.data.database.models.UserEntity

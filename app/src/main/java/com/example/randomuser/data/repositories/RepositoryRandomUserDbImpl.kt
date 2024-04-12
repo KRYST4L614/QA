@@ -1,8 +1,9 @@
-package com.example.randomuser.data.repositories.db
+package com.example.randomuser.data.repositories
 
 import androidx.lifecycle.LiveData
 import com.example.randomuser.data.database.RandomUsersDatabase
 import com.example.randomuser.data.database.models.UserEntity
+import com.example.randomuser.domain.repositories.RepositoryRandomUserDb
 
 class RepositoryRandomUserDbImpl(
     private val database: RandomUsersDatabase

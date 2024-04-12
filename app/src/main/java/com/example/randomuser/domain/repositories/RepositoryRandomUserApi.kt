@@ -1,4 +1,4 @@
-package com.example.randomuser.data.repositories.network
+package com.example.randomuser.domain.repositories
 
 import com.example.randomuser.data.network.models.UsersListData
 import retrofit2.Response

@@ -1,4 +1,4 @@
-package com.example.randomuser.data.network.paging
+package com.example.randomuser.data.network.mediator
 
 import androidx.paging.ExperimentalPagingApi
 import androidx.paging.LoadType
@@ -44,7 +44,7 @@ class RandomUserRemoteMediator(
             }
             val users = randomUserApi.getUsersPage(
                 loadKey,
-                15
+                state.config.pageSize
             )
             randomUsersDb.withTransaction {
                 if (loadType == LoadType.REFRESH) {

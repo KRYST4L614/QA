@@ -1,7 +1,8 @@
-package com.example.randomuser.data.repositories.network
+package com.example.randomuser.data.repositories
 
 import com.example.randomuser.data.network.api.RandomUserApi
 import com.example.randomuser.data.network.models.UsersListData
+import com.example.randomuser.domain.repositories.RepositoryRandomUserApi
 import retrofit2.Response
 import retrofit2.awaitResponse
 

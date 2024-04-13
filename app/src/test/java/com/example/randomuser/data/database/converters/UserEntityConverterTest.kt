@@ -1,6 +1,7 @@
 package com.example.randomuser.data.database.converters
 
 import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertThrows
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments
@@ -46,5 +47,14 @@ class UserEntityConverterTest {
     @Test
     fun `WHEN convert null value EXPECT null result in toDate method`() {
         assertEquals(UserEntityConverter().toDate(null), null)
+    }
+
+    @Test
+    fun `WHEN convert millisSinceEpoch EXPECT IllegalArgumentException in toDate method`() {
+        val exception = assertThrows(IllegalStateException::class.java) {
+            UserEntityConverter().toDate(-1)
+        }
+
+        assertEquals("MillisSinceEpoch = -1 must be > 0", exception.localizedMessage)
     }
 }

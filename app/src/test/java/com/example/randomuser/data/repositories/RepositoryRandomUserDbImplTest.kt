@@ -64,9 +64,11 @@ class RepositoryRandomUserDbImplTest {
         whenever(database.dao).thenReturn(dao)
         whenever(database.dao.getUserById(any())).thenReturn(MutableLiveData(testUserEntity))
         RepositoryRandomUserDbImpl.initialize(database)
+
+        val actual = RepositoryRandomUserDbImpl.get().getUserById(1).value
         assertEquals(
             testUserEntity,
-            RepositoryRandomUserDbImpl.get().getUserById(1).value
+            actual
         )
 
     }

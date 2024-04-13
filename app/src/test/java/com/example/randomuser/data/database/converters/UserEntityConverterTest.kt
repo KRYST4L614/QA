@@ -49,10 +49,12 @@ class UserEntityConverterTest {
         assertEquals(UserEntityConverter().toDate(null), null)
     }
 
+    //Не смог придумать что можно проверить в проекте на исключения, (мысли были проверить Room или
+    // Retrofit но как их тестить не дошло), поэтому написал искуственный метод.
     @Test
-    fun `WHEN convert millisSinceEpoch EXPECT IllegalArgumentException in toDate method`() {
+    fun `WHEN convert nagative millisSinceEpoch EXPECT IllegalArgumentException`() {
         val exception = assertThrows(IllegalStateException::class.java) {
-            UserEntityConverter().toDate(-1)
+            UserEntityConverter().toDateWithException(-1)
         }
 
         assertEquals("MillisSinceEpoch = -1 must be > 0", exception.localizedMessage)

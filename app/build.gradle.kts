@@ -5,6 +5,7 @@ plugins {
     id("kotlin-parcelize")
 }
 
+
 android {
     namespace = "com.example.randomuser"
     compileSdk = 34
@@ -17,6 +18,10 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    tasks.withType<Test> {
+        useJUnitPlatform()
     }
 
     buildTypes {
@@ -45,7 +50,7 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
 
     viewBinding {
@@ -56,11 +61,13 @@ android {
 }
 
 
+
 dependencies {
     val roomVersion = "2.6.1"
     val moshiVersion = "1.14.0"
     val pagingVersion = "3.2.1"
-    val mockitoVersion = "3.1.0"
+    val mockitoVersion = "4.1.0"
+    val junitVersion = "5.9.1"
     implementation("androidx.paging:paging-common-ktx:$pagingVersion")
     implementation("androidx.paging:paging-runtime-ktx:$pagingVersion")
     implementation("androidx.core:core-ktx:1.12.0")
@@ -82,6 +89,8 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-moshi:2.9.0")
     implementation("com.squareup.picasso:picasso:2.71828")
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
-    testImplementation("junit:junit:4.13.2")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:$junitVersion")
+    testImplementation("org.junit.jupiter:junit-jupiter-params:$junitVersion")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitVersion")
     testImplementation("org.mockito.kotlin:mockito-kotlin:$mockitoVersion")
 }

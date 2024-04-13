@@ -1,51 +1,50 @@
 package com.example.randomuser.data.database.converters
 
-import org.junit.Assert.assertEquals
-import org.junit.Test
-import org.junit.runner.RunWith
-import org.junit.runners.Parameterized
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Test
+import org.junit.jupiter.params.ParameterizedTest
+import org.junit.jupiter.params.provider.Arguments
+import org.junit.jupiter.params.provider.MethodSource
 import java.time.Instant
 import java.util.Date
+import java.util.stream.Stream
 
-@RunWith(Parameterized::class)
-class UserEntityConverterTest(
-    private val date: Date?,
-    private val milliseconds: Long?,
-) {
+class UserEntityConverterTest {
 
     companion object {
 
         @JvmStatic
-        @Parameterized.Parameters
-        fun data() = listOf(
-            arrayOf(
+        fun provideDateAndTime(): Stream<Arguments> = Stream.of(
+            Arguments.of(
                 Date.from(Instant.parse("2024-04-12T11:10:20.01Z")),
                 Date.from(Instant.parse("2024-04-12T11:10:20.01Z")).time
             ),
-            arrayOf(
+            Arguments.of(
                 Date.from(Instant.parse("2024-04-12T11:10:20.01Z")),
                 Date.from(Instant.parse("2024-04-12T11:10:20.01Z")).time
             ),
         )
     }
 
-    @Test
-    fun `WHEN convert from date EXPECT milliseconds`() {
-        assertEquals(UserEntityConverter().fromDate(date), milliseconds)
+    @ParameterizedTest(name = "{index}. date: {0}, millisSinceEpoch: {1}")
+    @MethodSource("provideDateAndTime")
+    fun `WHEN convert from date EXPECT milliseconds`(date: Date?, millisSinceEpoch: Long?) {
+        assertEquals(UserEntityConverter().fromDate(date), millisSinceEpoch)
+    }
+
+    @ParameterizedTest(name = "{index}. date: {0}, millisSinceEpoch: {1}")
+    @MethodSource("provideDateAndTime")
+    fun `WHEN convert from milliseconds EXPECT date`(date: Date?, millisSinceEpoch: Long?) {
+        assertEquals(UserEntityConverter().toDate(millisSinceEpoch), date)
     }
 
     @Test
-    fun `WHEN convert from milliseconds EXPECT date`() {
-        assertEquals(UserEntityConverter().toDate(milliseconds), date)
-    }
-
-    @Test
-    fun `When convert null value EXPECT null result in fromDate method`() {
+    fun `WHEN convert null value EXPECT null result in fromDate method`() {
         assertEquals(UserEntityConverter().fromDate(null), null)
     }
 
     @Test
-    fun `When convert null value EXPECT null result in toDate method`() {
+    fun `WHEN convert null value EXPECT null result in toDate method`() {
         assertEquals(UserEntityConverter().toDate(null), null)
     }
 }

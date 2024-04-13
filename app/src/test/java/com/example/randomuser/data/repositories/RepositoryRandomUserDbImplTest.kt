@@ -4,8 +4,8 @@ import androidx.lifecycle.MutableLiveData
 import com.example.randomuser.data.database.RandomUsersDatabase
 import com.example.randomuser.data.database.dao.RandomUserDao
 import com.example.randomuser.data.database.models.UserEntity
-import org.junit.Assert.assertEquals
-import org.junit.Test
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Test
 import org.mockito.kotlin.any
 import org.mockito.kotlin.mock
 import org.mockito.kotlin.whenever
@@ -13,9 +13,9 @@ import java.text.SimpleDateFormat
 import java.util.Locale
 
 class RepositoryRandomUserDbImplTest {
-    val database: RandomUsersDatabase = mock()
-    val dao: RandomUserDao = mock()
-    val testUserEntity = UserEntity(
+    private val database: RandomUsersDatabase = mock()
+    private val dao: RandomUserDao = mock()
+    private val testUserEntity = UserEntity(
         primaryId = 1,
         gender = "female",
         titleName = "Mrs",

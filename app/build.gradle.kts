@@ -83,14 +83,21 @@ dependencies {
     implementation("androidx.room:room-ktx:$roomVersion")
     implementation("androidx.room:room-paging:$roomVersion")
     annotationProcessor("androidx.room:room-compiler:$roomVersion")
+    //noinspection GradleDependency
     implementation("com.squareup.moshi:moshi:$moshiVersion")
+    //noinspection GradleDependency
     implementation("com.squareup.moshi:moshi-kotlin:$moshiVersion")
+    //noinspection GradleDependency
     ksp("com.squareup.moshi:moshi-kotlin-codegen:$moshiVersion")
     implementation("com.squareup.retrofit2:converter-moshi:2.9.0")
     implementation("com.squareup.picasso:picasso:2.71828")
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
+    //noinspection GradleDependency
     testImplementation("org.junit.jupiter:junit-jupiter-api:$junitVersion")
+    //noinspection GradleDependency
     testImplementation("org.junit.jupiter:junit-jupiter-params:$junitVersion")
+    //noinspection GradleDependency
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitVersion")
+    //noinspection GradleDependency
     testImplementation("org.mockito.kotlin:mockito-kotlin:$mockitoVersion")
 }

@@ -19,7 +19,7 @@ class UserEntityConverter {
     fun toDateWithException(millisSinceEpoch: Long?): Date? {
         return millisSinceEpoch?.let {
             if (millisSinceEpoch < 0) {
-                throw IllegalStateException("MillisSinceEpoch = ${millisSinceEpoch} must be > 0")
+                throw IllegalStateException("MillisSinceEpoch = $millisSinceEpoch must be > 0")
             }
             Date(it)
         }

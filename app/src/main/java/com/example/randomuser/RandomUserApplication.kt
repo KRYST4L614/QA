@@ -4,8 +4,8 @@ import android.app.Application
 import android.content.Context
 import com.example.randomuser.data.database.RandomUsersDatabase
 import com.example.randomuser.data.network.api.RandomUserApi
-import com.example.randomuser.data.repositories.RepositoryRandomUserDbImpl
 import com.example.randomuser.data.repositories.RepositoryRandomUserApiImpl
+import com.example.randomuser.data.repositories.RepositoryRandomUserDbImpl
 import com.example.randomuser.di.AppComponent
 import com.example.randomuser.di.DaggerAppComponent
 import javax.inject.Inject

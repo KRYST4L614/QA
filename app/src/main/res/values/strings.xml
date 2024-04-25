@@ -1,5 +1,5 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_name">RandomUser</string>
+    <string name="app_name">Khdkv_4</string>
     <string name="contacts">Контакты:</string>
     <string name="phone_number">Телефон: <xliff:g id="phone">%1$s</xliff:g></string>
     <string name="cell_phone_number">Моб. телефон: <xliff:g id="phone">%1$s</xliff:g></string>

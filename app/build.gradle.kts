@@ -66,18 +66,16 @@ dependencies {
     val roomVersion = "2.6.1"
     val moshiVersion = "1.14.0"
     val pagingVersion = "3.2.1"
-    val mockitoVersion = "4.1.0"
-    val junitVersion = "5.9.1"
     implementation("androidx.paging:paging-common-ktx:$pagingVersion")
     implementation("androidx.paging:paging-runtime-ktx:$pagingVersion")
-    implementation("androidx.core:core-ktx:1.12.0")
+    implementation("androidx.core:core-ktx:1.13.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-    implementation("com.google.dagger:dagger:2.50")
-    ksp("com.google.dagger:dagger-compiler:2.48.1")
+    implementation("com.google.dagger:dagger:2.51")
+    ksp("com.google.dagger:dagger-compiler:2.51")
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     ksp("androidx.room:room-compiler:$roomVersion")
     implementation("androidx.room:room-ktx:$roomVersion")
@@ -92,12 +90,5 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-moshi:2.9.0")
     implementation("com.squareup.picasso:picasso:2.71828")
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
-    //noinspection GradleDependency
-    testImplementation("org.junit.jupiter:junit-jupiter-api:$junitVersion")
-    //noinspection GradleDependency
-    testImplementation("org.junit.jupiter:junit-jupiter-params:$junitVersion")
-    //noinspection GradleDependency
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitVersion")
-    //noinspection GradleDependency
-    testImplementation("org.mockito.kotlin:mockito-kotlin:$mockitoVersion")
+    androidTestImplementation("com.kaspersky.android-components:kaspresso:1.5.2")
 }

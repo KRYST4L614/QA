@@ -82,8 +82,6 @@ dependencies {
     implementation("androidx.room:room-paging:$roomVersion")
     annotationProcessor("androidx.room:room-compiler:$roomVersion")
     //noinspection GradleDependency
-    implementation("com.squareup.moshi:moshi:$moshiVersion")
-    //noinspection GradleDependency
     implementation("com.squareup.moshi:moshi-kotlin:$moshiVersion")
     //noinspection GradleDependency
     ksp("com.squareup.moshi:moshi-kotlin-codegen:$moshiVersion")

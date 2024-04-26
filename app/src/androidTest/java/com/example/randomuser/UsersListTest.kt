@@ -6,6 +6,7 @@ import com.example.randomuser.screen.MainScreen
 import com.example.randomuser.screen.UserInfoScreen
 import com.example.randomuser.ui.activities.MainActivity
 import com.example.tools.annotation.TestCase
+import org.junit.Assert.assertTrue
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -28,7 +29,10 @@ class UsersListTest : KTestCase() {
         }.run {
             step("Check that items visible") {
                 MainScreen {
-                    for (i in 0..5) {
+                    usersList.isDisplayed()
+                    device.uiDevice.waitForIdle()
+                    assertTrue(usersList.getSize() >= 5)
+                    for (i in 0..<5) {
                         usersList {
                             childAt<MainScreen.UserItem>(i) {
                                 avatar.isDisplayed()
@@ -49,13 +53,16 @@ class UsersListTest : KTestCase() {
         name = "Test-2",
         description = "Check that the list item is clickable and move to another screen"
     )
-    fun testCaseSecond() {
+    fun checkClickOnItemUsersList() {
         before {
         }.after {
 
         }.run {
             step("Click on the item") {
                 MainScreen {
+                    usersList.isDisplayed()
+                    device.uiDevice.waitForIdle()
+                    assertTrue(usersList.getSize() >= 1)
                     usersList {
                         firstChild<MainScreen.UserItem> {
                             isDisplayed()

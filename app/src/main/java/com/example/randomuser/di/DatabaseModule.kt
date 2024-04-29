@@ -9,6 +9,7 @@ import com.example.randomuser.data.repositories.RepositoryRandomUserDbImpl
 import com.example.randomuser.domain.repositories.RepositoryRandomUserDb
 import dagger.Module
 import dagger.Provides
+import javax.inject.Singleton
 
 @Module
 class DatabaseModule {
@@ -22,6 +23,7 @@ class DatabaseModule {
     }
 
     @Provides
+    @Singleton
     fun provideRepositoryRandomUserDb(): RepositoryRandomUserDb {
         return RepositoryRandomUserDbImpl.get()
     }

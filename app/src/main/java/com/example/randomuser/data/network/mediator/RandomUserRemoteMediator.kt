@@ -28,7 +28,7 @@ class RandomUserRemoteMediator(
     ): MediatorResult {
         return try {
             val loadKey = when (loadType) {
-                LoadType.REFRESH -> 1
+                LoadType.REFRESH -> 0
                 LoadType.PREPEND -> return MediatorResult.Success(
                     endOfPaginationReached = true
                 )
@@ -36,7 +36,11 @@ class RandomUserRemoteMediator(
                 LoadType.APPEND -> {
                     val lastItem = state.lastItemOrNull()
                     if (lastItem == null) {
-                        1
+                        0
+                    } else if (lastItem.primaryId < state.config.pageSize) {
+                        return MediatorResult.Success(
+                            endOfPaginationReached = true
+                        )
                     } else {
                         lastItem.primaryId / state.config.pageSize
                     }
@@ -56,7 +60,7 @@ class RandomUserRemoteMediator(
                     it.toUserEntity()
                 })
                 MediatorResult.Success(
-                    endOfPaginationReached = usersList.isEmpty()
+                    endOfPaginationReached = usersList.size < state.config.pageSize
                 )
             }
         } catch (e: IOException) {

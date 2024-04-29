@@ -17,9 +17,12 @@ import dagger.Provides
 import retrofit2.Converter
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
+import javax.inject.Singleton
 
 @Module(includes = [DatabaseModule::class])
-class NetworkModule {
+open class NetworkModule {
+    open fun baseUrl(): String = BuildConfig.BASE_URL
+
     @ExperimentalPagingApi
     @Provides
     fun providesPager(db: RandomUsersDatabase, api: RandomUserApi): Pager<Int, UserEntity> {
@@ -39,7 +42,7 @@ class NetworkModule {
     @Provides
     fun providesRetrofit(converterFactory: Converter.Factory): Retrofit {
         return Retrofit.Builder()
-            .baseUrl(BuildConfig.BASE_URL)
+            .baseUrl(baseUrl())
             .addConverterFactory(converterFactory)
             .build()
     }
@@ -55,6 +58,7 @@ class NetworkModule {
     }
 
     @Provides
+    @Singleton
     fun provideRepositoryRandomUserApi(): RepositoryRandomUserApi {
         return RepositoryRandomUserApiImpl.get()
     }

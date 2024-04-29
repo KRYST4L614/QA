@@ -8,10 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.randomuser.R
+import com.example.randomuser.appComponent
 import com.example.randomuser.data.database.models.UserEntity
 import com.example.randomuser.databinding.UserInfoFragmentBinding
-import com.example.randomuser.di.AppComponent
-import com.example.randomuser.di.DaggerAppComponent
 import com.example.randomuser.ui.viewmodels.MainViewModel
 import com.example.randomuser.utils.Utils
 import com.squareup.picasso.Picasso
@@ -22,7 +21,6 @@ private const val USER_ENTITY_KEY = "userEntity"
 class UserInfoFragment : Fragment() {
     @Inject
     lateinit var factory: MainViewModel.Factory
-    private lateinit var appComponent: AppComponent
     private var _binding: UserInfoFragmentBinding? = null
     private val binding get() = _binding!!
 
@@ -32,8 +30,7 @@ class UserInfoFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = UserInfoFragmentBinding.inflate(layoutInflater)
-        appComponent = DaggerAppComponent.builder().context(requireContext()).build()
-        appComponent.inject(this)
+        requireActivity().appComponent.inject(this)
         return binding.root
     }
 

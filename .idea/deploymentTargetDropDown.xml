@@ -2,7 +2,7 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-      <entry key="ExampleInstrumentedTest">
+      <entry key="All Tests">
         <State />
       </entry>
       <entry key="UsersListTest">
@@ -21,13 +21,13 @@
               </deviceKey>
             </Target>
           </targetSelectedWithDropDown>
-          <timeTargetWasSelectedWithDropDown value="2024-03-04T08:07:50.969111100Z" />
+          <timeTargetWasSelectedWithDropDown value="2024-04-29T13:23:09.426598200Z" />
         </State>
       </entry>
-      <entry key="checkUsersListDisplaysItems()">
+      <entry key="checkClickOnItemUsersList()">
         <State />
       </entry>
-      <entry key="testCaseFirst()">
+      <entry key="checkUsersListDisplaysItems()">
         <State />
       </entry>
       <entry key="testCaseSecond()">

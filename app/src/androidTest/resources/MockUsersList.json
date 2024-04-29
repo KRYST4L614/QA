@@ -1,0 +1,290 @@
+{
+  "results": [
+    {
+      "gender": "female",
+      "name": {
+        "title": "Mrs",
+        "first": "Begüm",
+        "last": "Elçiboğa"
+      },
+      "location": {
+        "street": {
+          "number": 6787,
+          "name": "Fatih Sultan Mehmet Cd"
+        },
+        "city": "Karabük",
+        "state": "Tekirdağ",
+        "country": "Turkey",
+        "postcode": 40074,
+        "coordinates": {
+          "latitude": "67.0515",
+          "longitude": "174.5237"
+        },
+        "timezone": {
+          "offset": "0:00",
+          "description": "Western Europe Time, London, Lisbon, Casablanca"
+        }
+      },
+      "email": "begum.elciboga@example.com",
+      "login": {
+        "uuid": "2567acfb-532b-42a2-8fcd-4533b75a4826",
+        "username": "smallfish390",
+        "password": "second",
+        "salt": "pjTkOlF8",
+        "md5": "633de226087d8cd2ce211dd411c0870c",
+        "sha1": "b92de36e35f848b847a511498d893dd5cb2132e5",
+        "sha256": "6fc78b8e23d1390e230f308a5aa1fa3fbc5eca25684fd264ca45417f54ed39ef"
+      },
+      "dob": {
+        "date": "1958-03-28T04:29:37.024Z",
+        "age": 66
+      },
+      "registered": {
+        "date": "2006-08-20T03:29:53.897Z",
+        "age": 17
+      },
+      "phone": "(436)-351-3401",
+      "cell": "(648)-391-1963",
+      "id": {
+        "name": "",
+        "value": null
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/women/72.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/women/72.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/women/72.jpg"
+      },
+      "nat": "TR"
+    },
+    {
+      "gender": "male",
+      "name": {
+        "title": "Mr",
+        "first": "Guterre",
+        "last": "Fogaça"
+      },
+      "location": {
+        "street": {
+          "number": 2457,
+          "name": "Rua Rio de Janeiro "
+        },
+        "city": "Bragança",
+        "state": "Rio Grande do Norte",
+        "country": "Brazil",
+        "postcode": 28664,
+        "coordinates": {
+          "latitude": "-1.5571",
+          "longitude": "-176.4294"
+        },
+        "timezone": {
+          "offset": "+7:00",
+          "description": "Bangkok, Hanoi, Jakarta"
+        }
+      },
+      "email": "guterre.fogaca@example.com",
+      "login": {
+        "uuid": "2a6c5f22-f950-4377-9392-b3ad94e9a703",
+        "username": "bluezebra926",
+        "password": "2004",
+        "salt": "N2Jq6KNB",
+        "md5": "6c81b7dbce2c3f5d1026fef8a0521c12",
+        "sha1": "5b33cfdde1ec0624a8bb74f11f6e3eb7b2c8595c",
+        "sha256": "0b5097114159b3cbb845bd2853f116fc8d565375b5bc8f55f5b89867ca8366f0"
+      },
+      "dob": {
+        "date": "1958-12-09T11:40:17.967Z",
+        "age": 65
+      },
+      "registered": {
+        "date": "2003-02-17T00:19:33.541Z",
+        "age": 21
+      },
+      "phone": "(38) 0626-9193",
+      "cell": "(83) 5523-7035",
+      "id": {
+        "name": "CPF",
+        "value": "484.390.908-64"
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/20.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/20.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/20.jpg"
+      },
+      "nat": "BR"
+    },
+    {
+      "gender": "female",
+      "name": {
+        "title": "Ms",
+        "first": "Rose",
+        "last": "Park"
+      },
+      "location": {
+        "street": {
+          "number": 2319,
+          "name": "22nd Ave"
+        },
+        "city": "Stirling",
+        "state": "Yukon",
+        "country": "Canada",
+        "postcode": "A0T 4T5",
+        "coordinates": {
+          "latitude": "83.1813",
+          "longitude": "150.6785"
+        },
+        "timezone": {
+          "offset": "-7:00",
+          "description": "Mountain Time (US & Canada)"
+        }
+      },
+      "email": "rose.park@example.com",
+      "login": {
+        "uuid": "4035c1b3-af2f-45d5-8835-b1687c75f0f0",
+        "username": "happygorilla954",
+        "password": "bogus",
+        "salt": "rl38L18V",
+        "md5": "83375852c15f13f8014495116c8adaa4",
+        "sha1": "79d5a22e6c2b0d8e57657530bf7c14c299fef2a4",
+        "sha256": "73b29ebb4820edeffd7ff9a13786da490b8c381f6d9b573c3350773aa2f33adb"
+      },
+      "dob": {
+        "date": "1955-01-26T05:07:36.840Z",
+        "age": 69
+      },
+      "registered": {
+        "date": "2006-11-04T03:24:53.800Z",
+        "age": 17
+      },
+      "phone": "U93 Z58-5539",
+      "cell": "G20 Q41-2538",
+      "id": {
+        "name": "SIN",
+        "value": "945024099"
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/women/52.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/women/52.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/women/52.jpg"
+      },
+      "nat": "CA"
+    },
+    {
+      "gender": "male",
+      "name": {
+        "title": "Mr",
+        "first": "Javier",
+        "last": "Núñez"
+      },
+      "location": {
+        "street": {
+          "number": 6578,
+          "name": "Calle de Toledo"
+        },
+        "city": "Barcelona",
+        "state": "Castilla la Mancha",
+        "country": "Spain",
+        "postcode": 85369,
+        "coordinates": {
+          "latitude": "64.7835",
+          "longitude": "42.3017"
+        },
+        "timezone": {
+          "offset": "-9:00",
+          "description": "Alaska"
+        }
+      },
+      "email": "javier.nunez@example.com",
+      "login": {
+        "uuid": "72eebf33-0de3-442e-b9df-c266f238ce4f",
+        "username": "whiteelephant619",
+        "password": "12312312",
+        "salt": "FdCPhxju",
+        "md5": "b6661e6c45d2dec5d81bd336af5f996d",
+        "sha1": "9a1900d751b5c210936408a6fc54371e37f7660a",
+        "sha256": "95ec4f2bc9edd7b8f38b002c4eef81f8072e40fb3977d57ed0b61d60f75c8ade"
+      },
+      "dob": {
+        "date": "1999-04-22T13:00:51.464Z",
+        "age": 25
+      },
+      "registered": {
+        "date": "2011-08-21T01:19:45.014Z",
+        "age": 12
+      },
+      "phone": "951-155-853",
+      "cell": "607-799-344",
+      "id": {
+        "name": "DNI",
+        "value": "98505988-G"
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/86.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/86.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/86.jpg"
+      },
+      "nat": "ES"
+    },
+    {
+      "gender": "male",
+      "name": {
+        "title": "Mr",
+        "first": "Leon",
+        "last": "Scott"
+      },
+      "location": {
+        "street": {
+          "number": 3150,
+          "name": "South Street"
+        },
+        "city": "Newry",
+        "state": "Northamptonshire",
+        "country": "United Kingdom",
+        "postcode": "D44 3QZ",
+        "coordinates": {
+          "latitude": "13.2717",
+          "longitude": "140.8073"
+        },
+        "timezone": {
+          "offset": "-8:00",
+          "description": "Pacific Time (US & Canada)"
+        }
+      },
+      "email": "leon.scott@example.com",
+      "login": {
+        "uuid": "895f340a-7238-46d7-9256-58b1f780460e",
+        "username": "angrysnake646",
+        "password": "taurus",
+        "salt": "g3CP7P14",
+        "md5": "2f85d16821301de8331be23641b7f4d5",
+        "sha1": "52da152875c9f7da6351ff9253426274542719dc",
+        "sha256": "bfbaac1fe049148ae88938aa0473f17862dbd93553e99dd7074d921a53bd1be3"
+      },
+      "dob": {
+        "date": "1948-02-15T06:17:57.728Z",
+        "age": 76
+      },
+      "registered": {
+        "date": "2013-05-06T14:13:31.888Z",
+        "age": 10
+      },
+      "phone": "016974 71170",
+      "cell": "07532 579585",
+      "id": {
+        "name": "NINO",
+        "value": "HY 10 52 81 W"
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/35.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/35.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/35.jpg"
+      },
+      "nat": "GB"
+    }
+  ],
+  "info": {
+    "seed": "069fd4c585811c96",
+    "results": 5,
+    "page": 1,
+    "version": "1.4"
+  }
+}

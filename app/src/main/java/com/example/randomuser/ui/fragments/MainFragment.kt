@@ -13,10 +13,9 @@ import androidx.lifecycle.lifecycleScope
 import androidx.paging.LoadState
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.randomuser.R
+import com.example.randomuser.appComponent
 import com.example.randomuser.data.database.models.UserEntity
 import com.example.randomuser.databinding.FragmentMainBinding
-import com.example.randomuser.di.AppComponent
-import com.example.randomuser.di.DaggerAppComponent
 import com.example.randomuser.ui.adapters.UserPagingAdapter
 import com.example.randomuser.ui.viewmodels.MainViewModel
 import com.google.android.material.snackbar.Snackbar
@@ -30,7 +29,6 @@ class MainFragment : Fragment() {
     private val viewModel: MainViewModel by lazy {
         ViewModelProvider(requireActivity(), factory)[MainViewModel::class.java]
     }
-    private lateinit var appComponent: AppComponent
     private var _binding: FragmentMainBinding? = null
     private val binding get() = _binding!!
     private var callback: Callback? = null
@@ -44,11 +42,7 @@ class MainFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentMainBinding.inflate(layoutInflater, container, false)
-        appComponent = DaggerAppComponent
-            .builder()
-            .context(requireContext())
-            .build()
-        appComponent.inject(this)
+        this.requireActivity().appComponent.inject(this)
         with(binding) {
             userRecyclerView.layoutManager = LinearLayoutManager(requireContext())
             userRecyclerView.adapter = adapter

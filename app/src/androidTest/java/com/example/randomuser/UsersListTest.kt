@@ -2,11 +2,15 @@ package com.example.randomuser
 
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import com.example.randomuser.mockServer.MockRequest
+import com.example.randomuser.mockServer.MockRequestDispatcher
+import com.example.randomuser.mockServer.MockServerRule
 import com.example.randomuser.screen.MainScreen
 import com.example.randomuser.screen.UserInfoScreen
 import com.example.randomuser.ui.activities.MainActivity
 import com.example.tools.annotation.TestCase
-import org.junit.Assert.assertTrue
+import junit.framework.TestCase.assertTrue
+import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -14,8 +18,23 @@ import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
 class UsersListTest : KTestCase() {
-    @get:Rule
+
+    @get:Rule(order = 0)
+    val mockServerRule = MockServerRule()
+
+    @get:Rule(order = 1)
     val activityRule = ActivityScenarioRule(MainActivity::class.java)
+
+    @Before
+    fun setupMockServer() {
+        MockRequestDispatcher.addMockRequests(
+            MockRequest(
+                remotePath = "/api/?page=0&results=15",
+                localPath = "MockUsersList.json",
+                requestCode = 200
+            ),
+        )
+    }
 
     @Test
     @TestCase(
@@ -25,24 +44,20 @@ class UsersListTest : KTestCase() {
     fun checkUsersListDisplaysItems() {
         before {
         }.after {
-
         }.run {
             step("Check that items visible") {
                 MainScreen {
                     usersList.isDisplayed()
-                    device.uiDevice.waitForIdle()
-                    assertTrue(usersList.getSize() >= 5)
-                    for (i in 0..<5) {
-                        usersList {
-                            childAt<MainScreen.UserItem>(i) {
-                                avatar.isDisplayed()
-                                name.isDisplayed()
-                                info.isDisplayed()
-                                callButton.isDisplayed()
-                                messageButton.isDisplayed()
-                            }
-                        }
+                    flakySafely {
+                        assertTrue(usersList.getSize() >= 5)
                     }
+                    checkUsers(
+                        User("Mrs Begüm Elçiboğa", "Karabük, Turkey"),
+                        User("Mr Guterre Fogaça", "Bragança, Brazil"),
+                        User("Ms Rose Park", "Stirling, Canada"),
+                        User("Mr Javier Núñez", "Barcelona, Spain"),
+                        User("Mr Leon Scott", "Newry, United Kingdom")
+                    )
                 }
             }
         }
@@ -56,13 +71,13 @@ class UsersListTest : KTestCase() {
     fun checkClickOnItemUsersList() {
         before {
         }.after {
-
         }.run {
             step("Click on the item") {
                 MainScreen {
                     usersList.isDisplayed()
-                    device.uiDevice.waitForIdle()
-                    assertTrue(usersList.getSize() >= 1)
+                    flakySafely {
+                        assertTrue(usersList.getSize() >= 1)
+                    }
                     usersList {
                         firstChild<MainScreen.UserItem> {
                             isDisplayed()
@@ -82,6 +97,26 @@ class UsersListTest : KTestCase() {
                     locationButton.isDisplayed()
                     cellPhoneNumber.isDisplayed()
                     phoneNumber.isDisplayed()
+                }
+            }
+        }
+    }
+
+    data class User(val name: String, val info: String)
+
+    private fun checkUsers(vararg users: User) {
+        users.forEachIndexed { index, user ->
+            MainScreen {
+                usersList {
+                    childAt<MainScreen.UserItem>(index) {
+                        avatar.isDisplayed()
+                        name.isDisplayed()
+                        name.hasText(user.name)
+                        info.isDisplayed()
+                        info.hasText(user.info)
+                        callButton.isDisplayed()
+                        messageButton.isDisplayed()
+                    }
                 }
             }
         }

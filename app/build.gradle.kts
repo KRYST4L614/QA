@@ -17,7 +17,7 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "com.example.randomuser.UiRunner"
     }
 
     tasks.withType<Test> {
@@ -33,14 +33,14 @@ android {
             )
             buildConfigField("String", "BASE_URL", "\"https://randomuser.me/\"")
             buildConfigField("String", "DATABASE_NAME", "\"RandomUsers.db\"")
-            buildConfigField("Integer", "PAGER_INITIAL_KEY", "1")
+            buildConfigField("Integer", "PAGER_INITIAL_KEY", "0")
             buildConfigField("Integer", "PAGER_PREFETCH_DISTANCE", "5")
             buildConfigField("Integer", "PAGER_PAGE_SIZE", "15")
         }
         debug {
             buildConfigField("String", "BASE_URL", "\"https://randomuser.me/\"")
             buildConfigField("String", "DATABASE_NAME", "\"RandomUsers.db\"")
-            buildConfigField("Integer", "PAGER_INITIAL_KEY", "1")
+            buildConfigField("Integer", "PAGER_INITIAL_KEY", "0")
             buildConfigField("Integer", "PAGER_PREFETCH_DISTANCE", "5")
             buildConfigField("Integer", "PAGER_PAGE_SIZE", "15")
         }
@@ -89,4 +89,5 @@ dependencies {
     implementation("com.squareup.picasso:picasso:2.71828")
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
     androidTestImplementation("com.kaspersky.android-components:kaspresso:1.5.2")
+    androidTestImplementation("com.squareup.okhttp3:mockwebserver:3.14.9")
 }

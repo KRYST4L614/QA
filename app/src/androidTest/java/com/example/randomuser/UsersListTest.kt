@@ -10,7 +10,6 @@ import com.example.randomuser.screen.UserInfoScreen
 import com.example.randomuser.ui.activities.MainActivity
 import com.example.tools.annotation.TestCase
 import junit.framework.TestCase.assertTrue
-import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -20,13 +19,7 @@ import org.junit.runner.RunWith
 class UsersListTest : KTestCase() {
 
     @get:Rule(order = 0)
-    val mockServerRule = MockServerRule()
-
-    @get:Rule(order = 1)
-    val activityRule = ActivityScenarioRule(MainActivity::class.java)
-
-    @Before
-    fun setupMockServer() {
+    val mockServerRule = MockServerRule().also {
         MockRequestDispatcher.addMockRequests(
             MockRequest(
                 remotePath = "/api/?page=0&results=15",
@@ -35,6 +28,9 @@ class UsersListTest : KTestCase() {
             ),
         )
     }
+
+    @get:Rule(order = 1)
+    val activityRule = ActivityScenarioRule(MainActivity::class.java)
 
     @Test
     @TestCase(

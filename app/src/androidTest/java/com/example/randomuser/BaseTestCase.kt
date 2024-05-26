@@ -3,7 +3,7 @@ package com.example.randomuser
 import com.kaspersky.kaspresso.kaspresso.Kaspresso
 import com.kaspersky.kaspresso.testcases.api.testcase.BaseTestCase
 
-abstract class KTestCase(
+abstract class BaseTestCase(
     kaspressoBuilder: Kaspresso.Builder = getBuilder()
 ) : BaseTestCase<Unit, Unit>(
     kaspressoBuilder = kaspressoBuilder,

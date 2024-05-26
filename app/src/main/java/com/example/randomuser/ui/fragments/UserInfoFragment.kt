@@ -55,11 +55,11 @@ class UserInfoFragment : Fragment() {
                 avatarInfo.callButton.setOnClickListener {
                     Utils.sendPhoneCallIntent(requireContext(), phone)
                 }
-                contacts.phoneNumber.setOnClickListener {
+                contactsCard.phoneNumber.setOnClickListener {
                     Utils.sendPhoneCallIntent(requireContext(), phone)
                 }
                 userEntity.cell?.let { cell ->
-                    contacts.cellPhoneNumber.setOnClickListener {
+                    contactsCard.cellPhoneNumber.setOnClickListener {
                         Utils.sendPhoneCallIntent(requireContext(), cell)
                     }
                 }
@@ -82,16 +82,16 @@ class UserInfoFragment : Fragment() {
             personalInfo.registeredDate.text =
                 requireContext().getString(R.string.registration_date)
                     .format(DateFormat.format("d MMMM yyyy", userEntity.registerDate))
-            contacts.email.text =
+            contactsCard.email.text =
                 requireContext().getString(R.string.email).format(userEntity.email)
-            contacts.phoneNumber.text =
+            contactsCard.phoneNumber.text =
                 requireContext().getString(R.string.phone_number).format(userEntity.phone)
-            contacts.cellPhoneNumber.text =
+            contactsCard.cellPhoneNumber.text =
                 requireContext().getString(R.string.cell_phone_number)
                     .format(userEntity.cell)
             personalInfo.timezone.text =
                 requireContext().getString(R.string.timezone).format(userEntity.timezoneOffset)
-            contacts.postcode.text =
+            contactsCard.postcode.text =
                 requireContext().getString(R.string.postcode).format(userEntity.postcode)
             userEntity.latitude?.let {
                 userEntity.longitude?.let {

@@ -1,6 +1,5 @@
 package com.example.randomuser.tests
 
-import androidx.test.ext.junit.rules.ActivityScenarioRule
 import com.example.randomuser.BaseTestCase
 import com.example.randomuser.BuildConfig
 import com.example.randomuser.data.network.models.UsersListData
@@ -8,7 +7,6 @@ import com.example.randomuser.mockServer.MockRequest
 import com.example.randomuser.mockServer.MockRequestDispatcher
 import com.example.randomuser.mockServer.MockServerRule
 import com.example.randomuser.screen.MainScreen
-import com.example.randomuser.ui.activities.MainActivity
 import com.example.randomuser.util.getLocalJsonBody
 import com.example.tools.annotation.TestCase
 import com.squareup.moshi.Moshi
@@ -29,9 +27,6 @@ class UsersListVisibleTest : BaseTestCase() {
         )
     }
 
-    @get:Rule(order = 1)
-    val activityRule = ActivityScenarioRule(MainActivity::class.java)
-
     private val users: UsersListData? = Moshi
         .Builder()
         .add(KotlinJsonAdapterFactory())
@@ -44,7 +39,7 @@ class UsersListVisibleTest : BaseTestCase() {
         name = "Users list visible test",
         description = "Check that users list correctly visible at least 5 items"
     )
-    fun checkUsersListDisplaysItems() {
+    fun checkUsersListDisplaysItemsTest() {
         before {
         }.after {
         }.run {

@@ -5,6 +5,7 @@ import com.example.randomuser.R
 import com.example.randomuser.data.network.models.UserData
 import com.example.randomuser.util.getCity
 import com.example.randomuser.util.getName
+import com.kaspersky.components.kautomator.component.common.views.UiView
 import io.github.kakaocup.kakao.image.KImageView
 import io.github.kakaocup.kakao.recycler.KRecyclerItem
 import io.github.kakaocup.kakao.recycler.KRecyclerView
@@ -19,8 +20,8 @@ object MainScreen : Screen<MainScreen>() {
         itemTypeBuilder = { itemType(::UserItem) }
     )
 
-    private val connectionErrorImage = KImageView { withId(R.id.cloud_off) }
-    private val connectionErrorMessage = KTextView { withId(R.id.error_message) }
+    private val connectionErrorMessage =
+        UiView { withText("Failed to connect to localhost/127.0.0.1:8080") }
 
     class UserItem(parent: Matcher<View>) : KRecyclerItem<UserItem>(parent) {
         val avatar = KTextView(parent) { withId(R.id.avatar) }
@@ -56,6 +57,5 @@ object MainScreen : Screen<MainScreen>() {
         }
     }
 
-    fun checkConnectionErrorImageDisplayed() = connectionErrorImage.isDisplayed()
     fun checkConnectionErrorMessageDisplayed() = connectionErrorMessage.isDisplayed()
 }

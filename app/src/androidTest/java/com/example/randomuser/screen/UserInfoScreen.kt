@@ -23,22 +23,22 @@ object UserInfoScreen : KScreen<UserInfoScreen>() {
     override val viewClass = UserInfoFragment::class.java
 
 
-    private val avatar = KTextView { withId(R.id.avatar) }
-    private val name = KTextView { withId(R.id.name) }
-    private val callButton = KButton { withId(R.id.call_button) }
-    private val messageButton = KButton { withId(R.id.message_button) }
-    private val locationButton = KButton { withId(R.id.location_button) }
-    private val contactsTitle = KTextView { withId(R.id.contacts) }
-    private val cellPhone = KTextView { withId(R.id.cell_phone_number) }
-    private val mobPhone = KTextView { withId(R.id.phone_number) }
-    private val email = KTextView { withId(R.id.email) }
-    private val postcode = KTextView { withId(R.id.postcode) }
-    private val personalInfoTitle = KTextView { withId(R.id.person_info_title) }
-    private val userName = KTextView { withId(R.id.username) }
-    private val birthdate = KTextView { withId(R.id.birthdate) }
-    private val city = KTextView { withId(R.id.city) }
-    private val registeredDate = KTextView { withId(R.id.registered_date) }
-    private val timezone = KTextView { withId(R.id.timezone) }
+    val avatar = KTextView { withId(R.id.avatar) }
+    val name = KTextView { withId(R.id.name) }
+    val callButton = KButton { withId(R.id.call_button) }
+    val messageButton = KButton { withId(R.id.message_button) }
+    val locationButton = KButton { withId(R.id.location_button) }
+    val contactsTitle = KTextView { withId(R.id.contacts) }
+    val cellPhone = KTextView { withId(R.id.cell_phone_number) }
+    val mobPhone = KTextView { withId(R.id.phone_number) }
+    val email = KTextView { withId(R.id.email) }
+    val postcode = KTextView { withId(R.id.postcode) }
+    val personalInfoTitle = KTextView { withId(R.id.person_info_title) }
+    val userName = KTextView { withId(R.id.username) }
+    val birthdate = KTextView { withId(R.id.birthdate) }
+    val city = KTextView { withId(R.id.city) }
+    val registeredDate = KTextView { withId(R.id.registered_date) }
+    val timezone = KTextView { withId(R.id.timezone) }
 
     fun avatarIsDisplayed() = avatar.isDisplayed()
 
@@ -52,12 +52,6 @@ object UserInfoScreen : KScreen<UserInfoScreen>() {
     fun checkPersonalInfoTitleText(expectedTitle: String) =
         checkText(personalInfoTitle, expectedTitle)
 
-
-    fun clickCallButton() = clickButton(callButton)
-
-    fun clickMessageButton() = clickButton(messageButton)
-
-    fun clickLocationButton() = clickButton(locationButton)
 
     fun checkBirthdateText(expectedBirthdate: String) = checkText(birthdate, expectedBirthdate)
 
